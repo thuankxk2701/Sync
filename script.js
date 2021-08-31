@@ -353,25 +353,6 @@ const getPosition = function () {
 // fetch(`https://restcountries.eu/rest/v2/name/${country}`).then(res =>   console.log(res));
 
 const whereAmI = async function () {
-<<<<<<< HEAD
-  // Geolocation
-  const pos = await getPosition();
-  const { latitude: lat, longitude: lng } = pos.coords;
-  // Reverse geocoding
-  const resGeo = await fetch(` https://geocode.xyz/${lat},${lng}?geoit=json`);
-  const dataGeo = await resGeo.json();
-  console.log(dataGeo);
-
-  const res = await fetch(
-    `https://restcountries.eu/rest/v2/name/${dataGeo.country}`
-  );
-  const data = await res.json();
-  console.log(data);
-  renderCountry(data);
-};
-whereAmI();
-console.log('First');
-=======
   // repair Error
   try {
     // Geolocation
@@ -577,4 +558,3 @@ const loadAll = async function (imgArr) {
   }
 };
 loadAll(['img/img-1.jpg', 'img/img-2.jpg', 'img/img-3.jpg']);
->>>>>>> beta
