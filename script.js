@@ -558,3 +558,34 @@ const loadAll = async function (imgArr) {
   }
 };
 loadAll(['img/img-1.jpg', 'img/img-2.jpg', 'img/img-3.jpg']);
+
+/*
+ Lesson Promise
+ let promise = new Promise((resolve,reject)=>{
+   // logic
+   // success!:resolve();
+  // fall!: reject();
+  // Fake Api
+ })
+
+ promise.then(()=>{
+   console.log(1);
+   return 1
+ }).
+ then ((one)=>{
+   console.log(one);
+   // output  1;
+ }).catch(err=>console.log(err);)
+
+ let users=[
+   {
+     id:1,
+     name:'john',
+   },
+   {
+     id:2,
+     name:'jayKey',
+   }
+ ]
+
+*/
