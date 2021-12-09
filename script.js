@@ -549,9 +549,9 @@ const loadNPause = async function () {
 const loadAll = async function (imgArr) {
   try {
     const imgs = imgArr.map(async img => await createImage(img));
-    console.log(imgs);
+    // console.log(imgs);
     const imgsEl = await Promise.all(imgs);
-    console.log(imgsEl);
+    //  console.log(imgsEl);
     imgsEl.forEach(img => img.classList.add('parallel'));
   } catch (err) {
     console.error(err);
@@ -589,3 +589,20 @@ loadAll(['img/img-1.jpg', 'img/img-2.jpg', 'img/img-3.jpg']);
  ]
 
 */
+
+//IIFE - Immediately Invoked Function Expression
+
+// console.log(1);
+// (function () {
+//   var name = 'john';
+// })();
+
+//Scope
+{
+  {
+    const age = 18;
+    {
+      console.log(age);
+    }
+  }
+}
