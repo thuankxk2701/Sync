@@ -598,11 +598,48 @@ loadAll(['img/img-1.jpg', 'img/img-2.jpg', 'img/img-3.jpg']);
 // })();
 
 //Scope
-{
-  {
-    const age = 18;
-    {
-      console.log(age);
-    }
+// {
+//   {
+//     const age = 18;
+//     {
+//       console.log(age);
+//     }
+//   }
+// }
+
+// Closure
+// function  createStorage(key){
+//   const store= JSON.parse(localStorage.getItem(key)) ?? {};
+//   const save=()=>{
+//     localStorage.setItem()
+//   }
+//   const storage={
+//     get(key){
+//       return store[key];
+//     },
+//     set(key,value){
+//       store[key]=value;
+//       save();
+//     },
+//     remove(key){
+//       delete  store[key];
+//       save();
+//     }
+//   }
+//   return storage;
+// }
+
+// const profileSetting=createStorage('profile_setting');
+
+const teacher={
+  firstName:"nguyen",
+  lastName:"dao",
+  getFullName(){
+    console.log(`${this.firstName} ${this.lastName}`);
+    
   }
 }
+
+const button= document.querySelector('button');
+console.log(this);
+button.onclick=teacher.getFullName.bind(teacher);
