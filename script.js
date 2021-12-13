@@ -631,15 +631,122 @@ loadAll(['img/img-1.jpg', 'img/img-2.jpg', 'img/img-3.jpg']);
 
 // const profileSetting=createStorage('profile_setting');
 
-const teacher={
-  firstName:"nguyen",
-  lastName:"dao",
-  getFullName(){
-    console.log(`${this.firstName} ${this.lastName}`);
+// const teacher={
+//   firstName:"nguyen",
+//   lastName:"dao",
+//   getFullName(){
+//     console.log(`${this.firstName} ${this.lastName}`);
     
-  }
-}
+//   }
+// }
 
-const button= document.querySelector('button');
-console.log(this);
-button.onclick=teacher.getFullName.bind(teacher);
+// const button= document.querySelector('button');
+// console.log(this);
+// button.onclick=teacher.getFullName.bind(teacher);
+
+
+
+// const currentPromise= new Promise((resolve,reject)=>{
+//   let isCondition=true;
+//   if(isCondition){
+//     setTimeout(()=>{
+//       resolve('success');
+//     },3000)
+//   }else {
+//     reject('error')
+//   }
+
+// })
+// currentPromise.then(data=>
+//   console.log(data)
+// )
+// console.log(123);
+
+// class student {
+//   #firstName;
+//   #lastName;
+//   constructor(lastName,firstName){
+//     this.#firstName=firstName;
+//     this.#lastName=lastName;
+//   }
+//    getName(){
+//     console.log(`${firstName} ${lastName}`);
+//   }
+// }
+
+// const firstStudent=new student('key','xk');
+// firstStudent.firstName='nam';
+// console.log(firstStudent.firstName);
+
+// fetch('https://json-server-todo-demo.herokuapp.com/api/data').then((res)=>{
+//     let data= res.json();
+//    console.log(data);
+//   return data;
+// }).then(
+//   (result)=>{
+//    console.log(result);
+//   }
+// );
+///////////////////////////////////////Operator Advance////////////////////////////////////
+
+/// Operator Comma; take value to first own comma clause tow
+ 
+// let arr=[1,2,3,4][2,1,0];
+// console.log(arr);
+
+///////////////Delete//////////////
+
+// var myVar = 1;
+// 	var output = (function(){
+// 		delete myVar;
+// 		return myVar;
+// 	})();
+	
+// function MyFunc(){}
+// 	MyFunc.prototype.bar = 42;
+// 	var myFunc = new MyFunc();
+
+//   delete myFunc.bar;
+
+//   console.log(myFunc.bar);
+
+//   delete MyFunc.prototype.bar;
+// 	console.log(myFunc.bar);	
+
+// var data = [0, 1, 2];
+// 	var funcs = [];
+
+// 	function init() {						// 0
+// 		for (var i = 0; i < 3; i++) {
+				
+//     		var x = data[i];				// 1
+//     		var innerFunc = function() { 	// 2
+//     			var temp = x;
+//     			return function() {
+//     				return temp;
+//     			}; 
+//     		}();
+
+// 			funcs.push(innerFunc);			// 3
+// 		}
+// 	}
+
+// 	function run() {						// 4
+// 		for (var i = 0; i < 3; i++) {
+// 		    console.log(data[i] + ", " +  funcs[i]());   // 5
+// 		}
+// 	}
+
+// 	init();
+// 	run();
+//   var myObject = {
+//     myCountryName: 'India',
+//     getMyCountryName: function (){			   // 1
+//         return this.myCountryName;
+//     }
+// };
+
+// var countryInfo = myObject.getMyCountryName;  // 2
+
+// console.log(countryInfo());	                  // 3
+// console.log(myObject.getMyCountryName());	  // 4
