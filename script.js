@@ -549,12 +549,221 @@ const loadNPause = async function () {
 const loadAll = async function (imgArr) {
   try {
     const imgs = imgArr.map(async img => await createImage(img));
-    console.log(imgs);
+    // console.log(imgs);
     const imgsEl = await Promise.all(imgs);
-    console.log(imgsEl);
+    //  console.log(imgsEl);
     imgsEl.forEach(img => img.classList.add('parallel'));
   } catch (err) {
     console.error(err);
   }
 };
 loadAll(['img/img-1.jpg', 'img/img-2.jpg', 'img/img-3.jpg']);
+
+/*
+ Lesson Promise
+ let promise = new Promise((resolve,reject)=>{
+   // logic
+   // success!:resolve();
+  // fall!: reject();
+  // Fake Api
+ })
+
+ promise.then(()=>{
+   console.log(1);
+   return 1
+ }).
+ then ((one)=>{
+   console.log(one);
+   // output  1;
+ }).catch(err=>console.log(err);)
+
+ let users=[
+   {
+     id:1,
+     name:'john',
+   },
+   {
+     id:2,
+     name:'jayKey',
+   }
+ ]
+
+*/
+
+//IIFE - Immediately Invoked Function Expression
+
+// console.log(1);
+// (function () {
+//   var name = 'john';
+// })();
+
+//Scope
+// {
+//   {
+//     const age = 18;
+//     {
+//       console.log(age);
+//     }
+//   }
+// }
+
+// Closure
+// function  createStorage(key){
+//   const store= JSON.parse(localStorage.getItem(key)) ?? {};
+//   const save=()=>{
+//     localStorage.setItem()
+//   }
+//   const storage={
+//     get(key){
+//       return store[key];
+//     },
+//     set(key,value){
+//       store[key]=value;
+//       save();
+//     },
+//     remove(key){
+//       delete  store[key];
+//       save();
+//     }
+//   }
+//   return storage;
+// }
+
+// const profileSetting=createStorage('profile_setting');
+
+// const teacher={
+//   firstName:"nguyen",
+//   lastName:"dao",
+//   getFullName(){
+//     console.log(`${this.firstName} ${this.lastName}`);
+    
+//   }
+// }
+
+// const button= document.querySelector('button');
+// console.log(this);
+// button.onclick=teacher.getFullName.bind(teacher);
+
+
+
+// const currentPromise= new Promise((resolve,reject)=>{
+//   let isCondition=true;
+//   if(isCondition){
+//     setTimeout(()=>{
+//       resolve('success');
+//     },3000)
+//   }else {
+//     reject('error')
+//   }
+
+// })
+// currentPromise.then(data=>
+//   console.log(data)
+// )
+// console.log(123);
+
+// class student {
+//   #firstName;
+//   #lastName;
+//   constructor(lastName,firstName){
+//     this.#firstName=firstName;
+//     this.#lastName=lastName;
+//   }
+//    getName(){
+//     console.log(`${firstName} ${lastName}`);
+//   }
+// }
+
+// const firstStudent=new student('key','xk');
+// firstStudent.firstName='nam';
+// console.log(firstStudent.firstName);
+
+// fetch('https://json-server-todo-demo.herokuapp.com/api/data').then((res)=>{
+//     let data= res.json();
+//    console.log(data);
+//   return data;
+// }).then(
+//   (result)=>{
+//    console.log(result);
+//   }
+// );
+///////////////////////////////////////Operator Advance////////////////////////////////////
+
+/// Operator Comma; take value to first own comma clause tow
+ 
+// let arr=[1,2,3,4][2,1,0];
+// console.log(arr);
+
+///////////////Delete//////////////
+
+// var myVar = 1;
+// 	var output = (function(){
+// 		delete myVar;
+// 		return myVar;
+// 	})();
+	
+// function MyFunc(){}
+// 	MyFunc.prototype.bar = 42;
+// 	var myFunc = new MyFunc();
+
+//   delete myFunc.bar;
+
+//   console.log(myFunc.bar);
+
+//   delete MyFunc.prototype.bar;
+// 	console.log(myFunc.bar);	
+
+// var data = [0, 1, 2];
+// 	var funcs = [];
+
+// 	function init() {						// 0
+// 		for (var i = 0; i < 3; i++) {
+				
+//     		var x = data[i];				// 1
+//     		var innerFunc = function() { 	// 2
+//     			var temp = x;
+//     			return function() {
+//     				return temp;
+//     			}; 
+//     		}();
+
+// 			funcs.push(innerFunc);			// 3
+// 		}
+// 	}
+
+// 	function run() {						// 4
+// 		for (var i = 0; i < 3; i++) {
+// 		    console.log(data[i] + ", " +  funcs[i]());   // 5
+// 		}
+// 	}
+
+// 	init();
+// 	run();
+//   var myObject = {
+//     myCountryName: 'India',
+//     getMyCountryName: function (){			   // 1
+//         return this.myCountryName;
+//     }
+// };
+
+// var countryInfo = myObject.getMyCountryName;  // 2
+
+// console.log(countryInfo());	                  // undefined
+// console.log(myObject.getMyCountryName());	  //  India
+
+var count = 1;
+
+	if (function tempFunc(){}) {
+    console.log(count);
+    console.log([eval(function tempFunc(){})]);
+    console.log( typeof tempFunc);
+		count += typeof tempFunc;
+	}
+	console.log(count);
+
+  var count = 1;
+	if (true) {
+		function tempFunc(){};
+		count += typeof tempFunc;
+	}
+	console.log(count);
