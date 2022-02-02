@@ -750,20 +750,3 @@ loadAll(['img/img-1.jpg', 'img/img-2.jpg', 'img/img-3.jpg']);
 
 // console.log(countryInfo());	                  // undefined
 // console.log(myObject.getMyCountryName());	  //  India
-
-var count = 1;
-
-	if (function tempFunc(){}) {
-    console.log(count);
-    console.log([eval(function tempFunc(){})]);
-    console.log( typeof tempFunc);
-		count += typeof tempFunc;
-	}
-	console.log(count);
-
-  var count = 1;
-	if (true) {
-		function tempFunc(){};
-		count += typeof tempFunc;
-	}
-	console.log(count);
